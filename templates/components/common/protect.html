@@ -1,0 +1,32 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
+<script src="{{cdn 'js/bootstrap.min.js'}}"></script>
+{{{stylesheet 'css/protect.css'}}}
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div id="modal-logo">
+        {{#if settings.store_logo.image}}
+            <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo_size'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
+        {{else}}
+            <span class="header-logo-text">{{settings.store_logo.title}}</span>
+        {{/if}}
+    </div>
+    
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Login to Your Account</h1><br>
+        <form>
+            <input type="text" name="user" placeholder="Username">
+            <input type="password" name="pass" placeholder="Password">
+            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+        </form>
+            
+        <div class="login-help">
+            <a href="#">Register</a> - <a href="#">Forgot Password</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" data-toggle="modal" data-target="#login-modal" style="position: absolute; z-index: 9999;">Login</a>

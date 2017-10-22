@@ -21,6 +21,9 @@
         {{{snippet 'htmlhead'}}}
     </head>
     <body>
+        <!-- Bootstrap modal -->
+        {{> components/common/protect }}
+        
         {{{snippet 'header'}}}
         <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
 
@@ -42,5 +45,44 @@
 
         {{{footer.scripts}}}
         {{{snippet 'footer'}}}
+
+
+
+        <!-- <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#myModal').modal('show');
+            });
+        </script> -->
+
+
+        <!-- Password protect -->
+        <script type="text/javascript">
+            function passWord() {
+                var testV = 1;
+                var pass1 = prompt('Please Enter Your Password', ' ');
+                while (testV < 3) {
+                    if (!pass1)
+                        history.go(-1);
+                    if (pass1.toLowerCase() == "letmein") {
+                        alert('You Got it Right!');
+                        window.open('{{urls.home}}');
+                        break;
+                    }
+                    testV += 1;
+                    var pass1 =
+                        prompt('Access Denied - Password Incorrect, Please Try Again.', 'Password');
+                }
+                if (pass1.toLowerCase() != "password" & testV == 3)
+                    // history.go(-1);
+                    alert('See ya!');
+                return " ";
+            }
+    </script>
+    <center>
+        <form>
+            <input type="button" value="Enter Protected Area" onClick="passWord()">
+        </form>
+    </cente>
+    
     </body>
 </html>
