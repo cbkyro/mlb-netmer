@@ -5,15 +5,15 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#login-modal').modal({
-            show: true,
-            keyboard: false,
-            backdrop: 'static'
-        });
+        // $('#login-modal').modal({
+        //     show: true;
+        //     keyboard: false,
+        //     backdrop: 'static'
+        // });
     });    
 </script>
 
-<div class="modal fade show" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div id="modal-logo">
         {{#if settings.store_logo.image}}
             <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo_size'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
@@ -33,19 +33,21 @@
         <!-- JS Encrypt -->
         <!-- http://www.javascriptkit.com/epassword/index.htm -->
         <script>
-                
-            var pass = new Array()
-            var t3 = ""
-            var lim = 6
-            pass[0] = "7Egf8pHzsntjmff"
-            pass[1] = "xcrWwwWNV2pH7Zx"
-            pass[2] = "PE4bNgiBw3zRQz9"
-            pass[3] = "9cSc9uU5nqglwVB"
-            pass[4] = "6Fb3T5FuWN2h2ZHE"
-            pass[5] = "20Fb3T5FuWN2h2ZH"
+            
+            // Encrypted pw
+            var pass=new Array()
+            var t3=""
+            var lim=3
+            pass[0]="yRfhMZirrshKjgm"
+            pass[1]="QWacr9XkQykKktB"
+            pass[2]="ocWERpXzjt6qBi5"
+            pass[3]="SNFkxvpg3PWBm8"
+            pass[4]="4s8zsfoAXS1RhX"
+            pass[5]="39s8zsfoAXS1Rh"
 
             //configure extension to reflect the extension type of the target web page (ie: .htm or .html)
-            var extension = ".html"
+            // var extension = ".html"
+            var extension = "/"
             var enablelocking = 0
             var numletter = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             var temp3 = ''
@@ -78,7 +80,9 @@
                 if (verification.length != window.max(Math.LOG10E))
                     indicate = false
                 if (indicate)
-                    window.location = verification + extension
+                    $.cookie('visited', 'visited', { expires: 7, path: '/' }),
+                    // window.location = verification + extension
+                    window.location.href = "/"; //Redirect to home
                 else
                     alert("Invalid password. Please try again")
             }
