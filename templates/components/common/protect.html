@@ -10,6 +10,14 @@
         //     keyboard: false,
         //     backdrop: 'static'
         // });
+        
+        // ASCII Enter key submits same form as clicking button
+        $('.input').keypress(function (e) {
+            if (e.which == 13) {
+                $('.loginmodal-submit').click();
+                return false;    //<---- Add this line
+            }
+        });
     });    
 </script>
 
@@ -25,8 +33,8 @@
     <div class="modal-dialog">
         <div class="loginmodal-container">
             <h1 type="text" name="password2" size="15">Enter Password</h1><br>
-        <form name="password1">
-            <input type="text" name="password2" placeholder="Password" size="15">
+        <form name="password1" id="password1">
+            <input type="password" class="input" name="password2" placeholder="Password" size="15">
             <input type="button" class="login loginmodal-submit" value="Enter Store" onClick="submitentry()">
         </form>
 
@@ -98,3 +106,5 @@
     </div>
 
 <!-- <a href="#" data-toggle="modal" data-target="#login-modal" style="position: absolute; z-index: 9999;">Login</a> -->
+
+<!-- Created by Aether Pro -->
