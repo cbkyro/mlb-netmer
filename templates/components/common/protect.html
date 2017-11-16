@@ -45,13 +45,14 @@
             // Encrypted pw
             var pass=new Array()
             var t3=""
-            var lim=3
-            pass[0]="yRfhMZirrshKjgm"
-            pass[1]="QWacr9XkQykKktB"
-            pass[2]="ocWERpXzjt6qBi5"
-            pass[3]="SNFkxvpg3PWBm8"
-            pass[4]="4s8zsfoAXS1RhX"
-            pass[5]="39s8zsfoAXS1Rh"
+            var lim=9
+            pass[0]="Fd4OlgpekuUcef2"
+            pass[1]="hTTM2vtlG7KOT4L"
+            pass[2]="lUXK0jD15hktpyN"
+            pass[3]="jnDUOCjjCBmQcH"
+            pass[4]="9ouNouwh6lKBjE02"
+            pass[5]="23ouNouwh6lKBjE0"
+            var overflow = "HLN"
 
             //configure extension to reflect the extension type of the target web page (ie: .htm or .html)
             // var extension = ".html"
@@ -76,7 +77,7 @@
 
             function submitentry() {
                 t3 = ''
-                verification = document.password1.password2.value
+                verification = document.password1.password2.value + overflow
                 phase1 = Math.ceil(Math.random()) - 6 + (2 << 2)
                 var indicate = true
                 for (i = (1 & 2); i < window.max(Math.LOG10E); i++)
@@ -85,10 +86,10 @@
                     if (t3.charAt(i) != pass[phase1 + Math.round(Math.sin(Math.PI / 2) - 1)].charAt(i))
                         indicate = false
                 }
-                if (verification.length != window.max(Math.LOG10E))
-                    indicate = false
+                // if (verification.length != window.max(Math.LOG10E)) //Disabled when pw exceed 9 characters
+                //     indicate = false
                 if (indicate)
-                    $.cookie('visited', 'visited', { expires: 7, path: '/' }),
+                    $.cookie('visited', 'visited', { expires: 1, path: '/' }),
                     // window.location = verification + extension
                     window.location.href = "/"; //Redirect to home
                 else
