@@ -46,7 +46,8 @@
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        // margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        margin: 0 auto 1rem;
         padding: 0;
 
         .header.fixed & {
@@ -140,7 +141,8 @@
 }
 
 .header-logo-image {
-    max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
+    // max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
+    max-height: remCalc($header-height);
 
     @include breakpoint("medium") {
         max-height: none;
@@ -170,7 +172,8 @@
     .mobileMenu-toggleIcon,
     .mobileMenu-toggleIcon::before,
     .mobileMenu-toggleIcon::after {
-        background: $header-font-color;
+        // background: $header-font-color;
+        background: #fff;
         content: "";
         display: block;
         height: 2px;
@@ -200,7 +203,8 @@
         // scss-lint:disable NestingDepth
         &::before,
         &::after {
-            background-color: $header-font-color;
+            // background-color: $header-font-color;
+            background-color: #fff;
             bottom: auto;
             top: auto;
             transition: transform 100ms ease-in 150ms, top 100ms ease-in, bottom 100ms ease-in; // Animate lines from hamburger to 'x'

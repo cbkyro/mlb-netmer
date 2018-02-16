@@ -25,7 +25,8 @@
 
 .footer-info-col {
     @include grid-column(12);
-    color: stencilColor("color-textSecondary");
+    // color: stencilColor("color-textSecondary");
+    color: #fff;
     display: inline-block;
     float: none;
     font-size: fontSize("base"); // 2
@@ -95,7 +96,8 @@
     margin-left: 0;
 
     a {
-        color: stencilColor("color-textSecondary");
+        // color: stencilColor("color-textSecondary");
+        color: #fff;
         text-decoration: none;
 
         // scss-lint:disable NestingDepth
@@ -114,7 +116,8 @@
     }
 
     > .powered-by {
-        color: stencilColor("color-textSecondary");
+        // color: stencilColor("color-textSecondary");
+        color: #fff;
         font-size: fontSize("tiny");
         margin: 0;
     }
