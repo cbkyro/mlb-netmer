@@ -9,11 +9,11 @@
   transform: translate(0, -25%);  
   
   @media screen and (max-width: 800px) { 
-    top: 20.5% !important;
+    // top: 20.5% !important;
   }
 
   .header-logo-image { max-height: none; }
-}
+}a
 .loginmodal-container { max-width: 350px !important; }
 // Override Cornerstone modal styles END
 
@@ -26,6 +26,15 @@
 
 #modal-logo {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-height: 800px) and (min-height: 620px) { 
+    max-width: 50% !important;
+  }
+  @media screen and (max-height: 619px) { 
+    max-width: 35% !important;
+  }
 }
 
 /****** LOGIN MODAL ******/
@@ -122,4 +131,15 @@
 
 .login-help{
   font-size: 12px;
+}
+
+.modal-dialog {
+  @media screen and (max-height: 619px){ 
+   margin-top: -10px !important;
+  }
+}
+.modal-open .modal {
+  @media screen and (max-height: 619px){ 
+    overflow-y: hidden;
+  }
 }
